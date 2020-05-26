@@ -10,7 +10,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
-@ComponentScan(basePackages = "com.test.hplus")
+@ComponentScan(basePackages = "come.test.hplus")
 public class ApplicationConfig extends WebMvcConfigurationSupport {
 
     @Override
@@ -23,8 +23,8 @@ public class ApplicationConfig extends WebMvcConfigurationSupport {
     @Bean
     public InternalResourceViewResolver jspViewResolver(){
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("WEB-INF/jps");
-        viewResolver.setPrefix(".jsp");
+        viewResolver.setPrefix("WEB-INF/jsp/");
+        viewResolver.setSuffix(".jsp");
         viewResolver.setViewClass((JstlView.class));
         return viewResolver;
     }
