@@ -12,6 +12,7 @@
 				<div class="branding">
 					<a href="#home"><img src="images/hpluslogo.svg"
 						alt="Logo - H Plus Sports"></a>
+
 				</div>
 				<!-- branding -->
 				<ul class="navbar">
