@@ -1,4 +1,4 @@
-package come.test.hplus;
+package come.test.hplus.controllers;
 
 
 import org.springframework.stereotype.Controller;
@@ -11,6 +11,12 @@ public class HomeController {
         public String goHome(){
         System.out.println("in home controller");
         return "index";
+        }
+
+    @GetMapping("/goToSearch")
+        public String goToSearch(){
+        System.out.println("going to search page");
+        return "search";
         }
 
 }
