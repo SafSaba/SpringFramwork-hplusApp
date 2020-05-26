@@ -1,4 +1,4 @@
-package come.test.hplus;
+package come.test.hplus.config;
 
 
 import org.springframework.context.annotation.Bean;
@@ -16,7 +16,7 @@ public class ApplicationConfig extends WebMvcConfigurationSupport {
     @Override
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("css/**", "images/**")
-                .addResourceLocations("classpath:/static/css/", "classpath:/static/images");
+                .addResourceLocations("classpath:/static/css/", "classpath:/static/images/");
     }
 
 
