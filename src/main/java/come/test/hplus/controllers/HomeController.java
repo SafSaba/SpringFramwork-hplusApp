@@ -38,18 +38,18 @@ public class HomeController {
         return "register";
         }
 
-
-        @ModelAttribute("newuser")
-        public User getDefaultUser(){
+/*
+    @ModelAttribute("newuser")
+    public User getDefaultUser(){
         return new User();
-        }
+    }
 
 
-        @ModelAttribute("genderItems")
-        public List<String> getGenderItems(){
-            return Arrays.asList(new String[]{"Male","Female","Other"});
+    @ModelAttribute("genderItems")
+    public List<String> getGenderItems(){
+        return Arrays.asList(new String[]{"Male","Female","Other"});
 
-        }
+    }
 
 
 
@@ -57,5 +57,5 @@ public class HomeController {
     public Login getDefaultLogin(){
         return new Login();
     }
-
+*/
 }
