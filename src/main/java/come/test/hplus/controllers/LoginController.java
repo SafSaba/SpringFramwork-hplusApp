@@ -26,10 +26,10 @@ public class LoginController {
         return "login";
     }
 
-    @ExceptionHandler(ApplicationException.class)
-    public String handleException(){
-        System.out.println("in exception handler of Login Controller");
-        return "error";
-    }
+//    @ExceptionHandler(ApplicationException.class)
+//    public String handleException(){
+//        System.out.println("in exception handler of Login Controller");
+//        return "error";
+//    }
 
 }
