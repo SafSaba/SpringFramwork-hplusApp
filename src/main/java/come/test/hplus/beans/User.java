@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 public class User {
@@ -17,9 +18,9 @@ public class User {
     @Id
     private int id;
 
-    @Size(min = 6,message = "Username cannot be less than 6 characters")
+    @Size(min = 6,message = "{username.cannot.be.less.than.six.char}")
     private String username;
-    @Pattern(regexp = "((?=.[A-Z].{6,10}))",message = "Password must have one upper cse, one lower case and should be " +
+    @Pattern(regexp = "((?=.*[A-Z]).{6,10})",message = "Password must have one upper cse, one lower case and should be " +
             "between 6 to 10 characters")
     private String password;
     private String gender;
@@ -29,9 +30,7 @@ public class User {
     private String firstName;
     @NotEmpty(message = "Last Name cannot be empty")
     private String lastName;
-    @Past
-    @NotEmpty(message = "DOB format yyyy-mm-dd and cant be today")
-    private String dateOfBirth;
+    private Date dateOfBirth;
 
 
     public int getId() {
@@ -90,11 +89,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getDateOfBirth() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 }
