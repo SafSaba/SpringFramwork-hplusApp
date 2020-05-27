@@ -5,6 +5,8 @@ package come.test.hplus.beans;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
@@ -23,6 +25,7 @@ public class User {
     @Pattern(regexp = "((?=.*[A-Z]).{6,10})",message = "Password must have one upper cse, one lower case and should be " +
             "between 6 to 10 characters")
     private String password;
+    @Enumerated(EnumType.STRING)
     private Gender gender;
     @NotNull(message = "Activity can not be empty")
     private String activity;
