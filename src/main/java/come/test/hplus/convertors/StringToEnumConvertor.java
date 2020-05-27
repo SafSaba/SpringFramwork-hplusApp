@@ -4,7 +4,7 @@ import come.test.hplus.beans.Gender;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.convert.converter.GenericConverter;
 
-public class StrongToEnumConvertor implements Converter<String, Gender> {
+public class StringToEnumConvertor implements Converter<String, Gender> {
     @Override
     public Gender convert(String s) {
         if(s.equals("Male")){

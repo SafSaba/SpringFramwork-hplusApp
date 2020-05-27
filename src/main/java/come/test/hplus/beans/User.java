@@ -23,7 +23,7 @@ public class User {
     @Pattern(regexp = "((?=.*[A-Z]).{6,10})",message = "Password must have one upper cse, one lower case and should be " +
             "between 6 to 10 characters")
     private String password;
-    private String gender;
+    private Gender gender;
     @NotNull(message = "Activity can not be empty")
     private String activity;
     @NotEmpty(message = "First Name cannot be empty")
@@ -57,11 +57,11 @@ public class User {
         this.password = password;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 
