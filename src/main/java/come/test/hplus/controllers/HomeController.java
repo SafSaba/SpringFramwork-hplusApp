@@ -1,6 +1,7 @@
 package come.test.hplus.controllers;
 
 
+import come.test.hplus.beans.Login;
 import come.test.hplus.beans.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,17 +38,24 @@ public class HomeController {
         return "register";
         }
 
-
-        @ModelAttribute("newuser")
-        public User getDefaultUser(){
+/*
+    @ModelAttribute("newuser")
+    public User getDefaultUser(){
         return new User();
-        }
+    }
 
 
-        @ModelAttribute("genderItems")
-        public List<String> getGenderItems(){
-            return Arrays.asList(new String[]{"Male","Female","Other"});
+    @ModelAttribute("genderItems")
+    public List<String> getGenderItems(){
+        return Arrays.asList(new String[]{"Male","Female","Other"});
 
-        }
+    }
 
+
+
+    @ModelAttribute("login")
+    public Login getDefaultLogin(){
+        return new Login();
+    }
+*/
 }

@@ -1,8 +1,16 @@
 package come.test.hplus.beans;
 
 
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
+import javax.validation.constraints.*;
+import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 public class User {
@@ -11,13 +19,21 @@ public class User {
 
     @Id
     private int id;
+
+    @Size(min = 6,message = "{username.cannot.be.less.than.six.char}")
     private String username;
+    @Pattern(regexp = "((?=.*[A-Z]).{6,10})",message = "Password must have one upper cse, one lower case and should be " +
+            "between 6 to 10 characters")
     private String password;
-    private String gender;
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+    @NotNull(message = "Activity can not be empty")
     private String activity;
+    @NotEmpty(message = "First Name cannot be empty")
     private String firstName;
+    @NotEmpty(message = "Last Name cannot be empty")
     private String lastName;
-    private String dateOfBirth;
+    private Date dateOfBirth;
 
 
     public int getId() {
@@ -44,11 +60,11 @@ public class User {
         this.password = password;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 
@@ -76,11 +92,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getDateOfBirth() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 }
