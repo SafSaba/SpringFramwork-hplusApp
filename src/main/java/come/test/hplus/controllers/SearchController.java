@@ -49,7 +49,7 @@ public class SearchController {
 
         executor.execute(()->{
             try {
-                Thread.sleep(6000);
+                Thread.sleep(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
