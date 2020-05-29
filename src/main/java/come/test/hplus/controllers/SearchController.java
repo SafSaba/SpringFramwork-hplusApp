@@ -48,11 +48,11 @@ public class SearchController {
         };*/
 
         executor.execute(()->{
-            try {
+            /*try {
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
-            }
+            }*/
             System.out.println("Thread from the spring mvc task executor : " + Thread.currentThread().getName());
             List<Product> products = new ArrayList<>();
             products = productRepository.searchByName(search);
